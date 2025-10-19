@@ -1,1 +1,65 @@
-SUCCES
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Local File Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .folder-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .folder {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 200px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .folder:hover {
+      transform: scale(1.05);
+    }
+    .folder a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .logo {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 100px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <h1>📁 My Local File Hub</h1>
+  <div class="folder-list">
+    <div class="folder"><a href="files/">Files</a></div>
+    <div class="folder"><a href="busnisses/">Busnisses</a></div>
+    <div class="folder"><a href="projects/">Projects</a></div>
+    <div class="folder"><a href="AI/">AI</a></div>
+    <div class="folder"><a href="Design/">Design</a></div>
+  </div>
+
+  <img src="https://i.postimg.cc/1z71TP28/MARKson-logo.png" alt="MARKson Logo" class="logo" />
+</body>
+</html>

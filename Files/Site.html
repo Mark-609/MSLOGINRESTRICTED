@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MARKson — Smart Software for Everyone</title>
+<meta name="description" content="MARKson — powerful and simple software for personal use." />
+<link rel="icon" type="image/png" href="https://i.postimg.cc/yY90T1RX/Markson-New-Favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.glass { background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); backdrop-filter: blur(6px); }
+.floating { transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s; }
+.floating:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.2); }
+</style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased">
+<header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
+<a href="#" class="flex items-center gap-3">
+<img src="https://i.postimg.cc/s25PDVjd/Markson-New.png" alt="MARKson Logo" class="h-12 w-auto rounded-xl object-contain" />
+<div>
+<div class="font-semibold tracking-tight">MARKson</div>
+<div class="text-xs text-slate-400">Smart software, made personal</div>
+</div>
+</a>
+<nav class="hidden md:flex gap-6 items-center text-slate-300">
+<a href="#features" class="hover:text-white">Features</a>
+<a href="#faq" class="hover:text-white">FAQ</a>
+<a href="store.html" class="px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500">Store</a>
+</nav>
+<button class="md:hidden p-2 rounded-md bg-slate-800" aria-label="menu">☰</button>
+</header>
+
+
+<main class="max-w-6xl mx-auto px-6 pb-24">
+<section class="grid md:grid-cols-2 gap-12 items-center mt-8">
+<div>
+<h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Simplify your digital life.</h1>
+<p class="mt-4 text-slate-300 text-lg">MARKson provides modern and secure software tools designed for personal productivity, creativity, and convenience.</p>
+<div class="mt-6 flex gap-3">
+<a href="store.html" class="px-5 py-3 bg-indigo-600 rounded-lg font-medium hover:bg-indigo-500">Go to Store</a>
+<a href="#contact" class="px-5 py-3 border border-slate-700 rounded-lg text-slate-300">Get in touch</a>
+</div>
+</div>
+
+
+<div class="relative">
+<a href="store.html" class="block glass rounded-2xl p-6 floating text-center">
+<h2 class="text-xl font-semibold">MARKson App Preview</h2>
+<p class="text-slate-400 mt-2 text-sm">Your personal toolkit for seamless daily use.</p>
+<img src="https://i.postimg.cc/d1jSpNSS/Bass-Booster.png" alt="MARKson App Preview" class="mt-4 rounded-lg object-contain w-full h-40" />
+</a>
+</div>
+</section>
+</main>
+
+
+<footer class="border-t border-slate-800 py-6 mt-12 text-slate-500">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<div>© <span id="year"></span> MARKson — All rights reserved.</div>
+<div class="text-sm">Privacy · Terms · Support</div>
+</div>
+</footer>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelector('header button[aria-label="menu"]').addEventListener('click', function(){
+const nav = document.querySelector('nav');
+nav.classList.toggle('hidden');
+});
+</script>
+</body>
+</html>

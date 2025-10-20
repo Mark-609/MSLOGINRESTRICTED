@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busnisses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .nested {
+      display: none;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📄 Busnisses Projects</h1>
+
+  <ul>
+    <li><a href="https://sites.google.com/view/brawlyesper/brawlyesper">BrawllYesper Site</a></li>
+
+    <li>
+      <a onclick="toggleFolder('spiderFolder')">SpiderGame Folder</a>
+      <ul class="nested" id="spiderFolder">
+        <li><a href="busnisses/SpiderGame/Index.html">Index.html</a></li>
+        <li><a href="busnisses/SpiderGame/Script.js">Script.js</a></li>
+        <li><a href="busnisses/SpiderGame/Style.css">Style.css</a></li>
+        <li><a href="busnisses/SpiderGame/Save.json">Save.json</a></li>
+        <li><a href="busnisses/SpiderGame/ByteBounce.ttf">ByteBounce.ttf</a></li>
+
+        <li>
+          <a onclick="toggleFolder('picsFolder')">🖼️ Pics Folder</a>
+          <ul class="nested" id="picsFolder">
+            <li><a href="busnisses/SpiderGame/Pics/Apple.png">Apple.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/Axe.png">Axe.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/BibSword.png">BibSword.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/CrownSpider.png">CrownSpider.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/Drawer.png">Drawer.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/HalfHeart.png">HalfHeart.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/Heart.png">Heart.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/KingSpider.png">KingSpider.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/Knife.png">Knife.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/MiniGunSpider.png">MiniGunSpider.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/NinjaStar.png">NinjaStar.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/NormalSpider.png">NormalSpider.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/Player.png">Player.png</a></li>
+            <li><a href="busnisses/SpiderGame/Pics/SpiderBullet.png">SpiderBullet.png</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    function toggleFolder(id) {
+      const folder = document.getElementById(id);
+      folder.style.display = folder.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

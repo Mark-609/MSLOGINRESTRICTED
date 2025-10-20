@@ -5,26 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Local File Hub</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-      margin: 0;
-      min-height: 100vh;
-      position: relative;
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #000;
+      --card-bg: #fff;
+      --font-size: 16px;
+      --gap-size: 20px;
     }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: var(--card-bg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-right: 1px solid #ccc;
+    }
+
+    .settings {
+      margin-bottom: 20px;
+    }
+
+    .settings button {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: #007acc;
+      color: white;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .settings button:hover {
+      background: #005fa3;
+    }
+
+    .logo {
+      width: 100px;
+      margin-top: auto;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 20px;
+      font-size: var(--font-size);
+    }
+
     h1 {
       text-align: center;
       margin-bottom: 40px;
     }
+
     .folder-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: var(--gap-size);
     }
+
     .folder {
-      background: white;
+      background: var(--card-bg);
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -32,34 +94,72 @@
       text-align: center;
       transition: transform 0.2s ease;
     }
+
     .folder:hover {
       transform: scale(1.05);
     }
+
     .folder a {
       text-decoration: none;
       color: #007acc;
       font-weight: bold;
       font-size: 18px;
     }
-    .logo {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 100px;
-      opacity: 0.9;
+
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --card-bg: #2c2c2c;
     }
   </style>
 </head>
 <body>
-  <h1>📁 My Local File Hub</h1>
-  <div class="folder-list">
-    <div class="folder"><a href="files.html">Files</a></div>
-    <div class="folder"><a href="busnisses/">Busnisses</a></div>
-    <div class="folder"><a href="projects/">Projects</a></div>
-    <div class="folder"><a href="AI/">AI</a></div>
-    <div class="folder"><a href="Design/">Design</a></div>
+  <div class="container">
+    <div class="sidebar">
+      <div class="settings">
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <button onclick="toggleFontSize()">🔠 Font Size</button>
+        <button onclick="toggleSpacing()">📐 Layout Spacing</button>
+        <button onclick="resetSettings()">🧹 Reset</button>
+      </div>
+      <img src="https://i.postimg.cc/1z71TP28/MARKson-logo.png" alt="MARKson Logo" class="logo" />
+    </div>
+
+    <div class="main">
+      <h1>📁 My Local File Hub</h1>
+      <div class="folder-list">
+        <div class="folder"><a href="files.html">Files</a></div>
+        <div class="folder"><a href="busnisses.html">Busnisses</a></div>
+        <div class="folder"><a href="projects.html">Projects</a></div>
+        <div class="folder"><a href="AI.html">AI</a></div>
+        <div class="folder"><a href="design.html">Design</a></div>
+      </div>
+    </div>
   </div>
 
-  <img src="https://i.postimg.cc/1z71TP28/MARKson-logo.png" alt="MARKson Logo" class="logo" />
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    function toggleFontSize() {
+      const root = document.documentElement;
+      const current = getComputedStyle(root).getPropertyValue("--font-size").trim();
+      root.style.setProperty("--font-size", current === "16px" ? "18px" : "16px");
+    }
+
+    function toggleSpacing() {
+      const root = document.documentElement;
+      const current = getComputedStyle(root).getPropertyValue("--gap-size").trim();
+      root.style.setProperty("--gap-size", current === "20px" ? "40px" : "20px");
+    }
+
+    function resetSettings() {
+      const root = document.documentElement;
+      document.body.classList.remove("dark");
+      root.style.setProperty("--font-size", "16px");
+      root.style.setProperty("--gap-size", "20px");
+    }
+  </script>
 </body>
 </html>
